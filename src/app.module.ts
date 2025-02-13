@@ -3,6 +3,13 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from './config.postgres.config';
 import { UserModule } from './user/user.module';
+import { SessionModule } from './session/session.module';
+import { ListModule } from './list/list.module';
+import { ContentModule } from './content/content.module';
+import { ListingModule } from './listing/listing.module';
+import { RatingModule } from './rating/rating.module';
+import { GenreModule } from './genre/genre.module';
+import { ContentGenreModule } from './content-genre/content-genre.module';
 
 @Module({
   imports: [
@@ -13,7 +20,14 @@ import { UserModule } from './user/user.module';
       useClass: TypeOrmConfigService,
       inject: [TypeOrmConfigService],
     }),
-    UserModule
+    UserModule,
+    SessionModule,
+    ListModule,
+    ContentModule,
+    ListingModule,
+    RatingModule,
+    GenreModule,
+    ContentGenreModule
   ],
   controllers: [],
   providers: [],
