@@ -11,6 +11,7 @@ import { AppModule } from './app.module';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { getMovies } from './tmdb-api/tmdb.config';
 
 dotenv.config();
 
@@ -87,8 +88,13 @@ async function bootstrap() {
 
   await app.listen(port);
 
-  process.env.PRODUCTION == 'false'
-    ? logger.debug(`Servidor de desenvolvimento rodando na porta ${port}`)
-    : logger.debug(`Servidor de produção rodando na porta ${port}`);
+  logger.debug(`Servidor de ${
+    process.env.PRODUCTION == 'false'
+    ? `desenvolvimento`
+    : `produção`
+    } rodando na porta ${port}`
+  );
+  
+  console.log(await getMovies());
 }
 bootstrap();
