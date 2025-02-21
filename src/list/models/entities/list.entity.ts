@@ -3,6 +3,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import { ListVisibilitiesEnum } from "../enums/list-visibilities.enum";
 import { UserEntity } from "src/user/models/entities/user.entity";
 import { ListingEntity } from "src/listing/models/entities/listing.entity";
+import { UserListEntity } from "src/user-list/models/entities/user-list.entity";
 
 @Entity({ name: 'lists', schema: process.env.DB_SCHEMA })
 export class ListEntity extends EntityTemplate {
@@ -14,9 +15,8 @@ export class ListEntity extends EntityTemplate {
 
     // --{ RELATIONS }--
 
-    @JoinColumn({ name: 'fk_user' })
-    @ManyToOne(() => UserEntity, user => user.lists, { nullable: false })
-    user: UserEntity;
+    @OneToMany(() => UserListEntity, userList => userList.user)
+    usersLists: UserListEntity[];
 
     @OneToMany(() => ListingEntity, listing => listing.list)
     listings: ListingEntity[];

@@ -7,13 +7,13 @@ import { ContentEntity } from "src/content/models/entities/content.entity";
 
 @Entity({ name: 'ratings', schema: process.env.DB_SCHEMA })
 export class RatingEntity extends EntityTemplate {
-    public static MIN_SCORE = 1
-    public static MAX_SCORE = 10;
+    public static MIN_RATING = 1
+    public static MAX_RATING = 10;
 
     @Column({ type: 'decimal', precision: 3, scale: 1 })
-    @Min(RatingEntity.MIN_SCORE, { message: `'score' deve ser no mínimo ${RatingEntity.MIN_SCORE}` })
-    @Max(RatingEntity.MAX_SCORE, { message: `'score' deve ser no máximo ${RatingEntity.MAX_SCORE}` })
-    score: number;
+    @Min(RatingEntity.MIN_RATING, { message: `'rating' deve ser no mínimo ${RatingEntity.MIN_RATING}` })
+    @Max(RatingEntity.MAX_RATING, { message: `'rating' deve ser no máximo ${RatingEntity.MAX_RATING}` })
+    rating: number;
 
     @Column({ type: 'enum', enum: RatingVisibilitiesEnum })
     visibility: RatingVisibilitiesEnum;

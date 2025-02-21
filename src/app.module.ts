@@ -10,6 +10,7 @@ import { ListingModule } from './listing/listing.module';
 import { RatingModule } from './rating/rating.module';
 import { GenreModule } from './genre/genre.module';
 import { ContentGenreModule } from './content-genre/content-genre.module';
+import { UserListModule } from './user-list/user-list.module';
 
 @Module({
   imports: [
@@ -27,7 +28,8 @@ import { ContentGenreModule } from './content-genre/content-genre.module';
     ListingModule,
     RatingModule,
     GenreModule,
-    ContentGenreModule
+    ContentGenreModule,
+    UserListModule
   ],
   controllers: [],
   providers: [],
