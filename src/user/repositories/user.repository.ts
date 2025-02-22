@@ -10,11 +10,15 @@ export class UserTypeOrmRepository {
         private readonly repository: Repository<UserEntity>
     ){}
 
-    async create(user: UserEntity) {
+    async create(user: UserEntity): Promise<UserEntity> {
         return this.repository.save(user);
     }
 
-    async findByNickname(nickname: string) {
+    async findByNickname(nickname: string): Promise<UserEntity> {
         return await this.repository.findOne({ where: { nickname } });
+    }
+
+    async findById(id: number): Promise<UserEntity> {
+        return await this.repository.findOne({ where: { id } });
     }
 }

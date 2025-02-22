@@ -6,6 +6,7 @@ import { RegisterUserUseCase } from "./use-cases/register-user/register-user.use
 import { FindUserByNicknameUseCase } from "./use-cases/find-user-by-nickname/find-user-by-nickname.use-case";
 import { UserTypeOrmRepository } from "./repositories/user.repository";
 import { BcryptModule } from "src/bcrypt/bcrypt.module";
+import { FindUserByIdUseCase } from "./use-cases/find-by-id/find-user-by-id.use-case";
 
 @Module({
     imports: [
@@ -18,10 +19,12 @@ import { BcryptModule } from "src/bcrypt/bcrypt.module";
     providers: [
         UserTypeOrmRepository,
         RegisterUserUseCase,
-        FindUserByNicknameUseCase
+        FindUserByNicknameUseCase,
+        FindUserByIdUseCase
     ],
     exports: [
-        FindUserByNicknameUseCase
+        FindUserByNicknameUseCase,
+        FindUserByIdUseCase
     ]
 })
 export class UserModule {}

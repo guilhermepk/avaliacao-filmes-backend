@@ -10,6 +10,7 @@ import { RatingModule } from './rating/rating.module';
 import { UserListModule } from './user-list/user-list.module';
 import { BcryptModule } from './bcrypt/bcrypt.module';
 import { AuthModule } from './auth/auth.module';
+import { ContentModule } from './content/content.module';
 
 @Module({
   imports: [
@@ -27,7 +28,8 @@ import { AuthModule } from './auth/auth.module';
     ListModule,
     ListingModule,
     RatingModule,
-    UserListModule
+    UserListModule,
+    ContentModule
   ],
   controllers: [],
   providers: [],

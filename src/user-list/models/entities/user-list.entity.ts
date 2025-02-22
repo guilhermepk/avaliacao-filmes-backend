@@ -5,6 +5,12 @@ import { Entity, JoinColumn, ManyToOne } from "typeorm";
 
 @Entity({ name: 'users_lists', schema: process.env.DB_SCHEMA })
 export class UserListEntity extends EntityTemplate {
+    constructor(user: UserEntity, list: ListEntity){
+        super();
+        this.user = user;
+        this.list = list;
+    }
+
     // --{ RELATIONS }--
     @JoinColumn({ name: 'fk_user' })
     @ManyToOne(() => UserEntity, user => user.usersLists)

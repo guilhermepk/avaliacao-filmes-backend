@@ -3,7 +3,7 @@ import { JwtModule } from "@nestjs/jwt";
 import { PassportModule } from "@nestjs/passport";
 import { LoginController } from "./use-cases/login/login.controller";
 import { LoginUseCase } from "./use-cases/login/login.use-case";
-import { JwtStrategy } from './jwt.strategy';
+import { JwtStrategy } from './strategies/jwt.strategy';
 import * as dotenv from 'dotenv';
 import { BcryptModule } from "src/bcrypt/bcrypt.module";
 import { UserModule } from "src/user/user.module";

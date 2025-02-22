@@ -7,6 +7,12 @@ import { UserListEntity } from "src/user-list/models/entities/user-list.entity";
 
 @Entity({ name: 'lists', schema: process.env.DB_SCHEMA })
 export class ListEntity extends EntityTemplate {
+    constructor(name: string, visibility: ListVisibilitiesEnum) {
+        super();
+        this.name = name;
+        this.visibility = visibility;
+    }
+
     @Column({ type: 'varchar', nullable: false })
     name: string;
 
