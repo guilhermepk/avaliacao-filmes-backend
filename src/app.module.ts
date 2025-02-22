@@ -8,6 +8,7 @@ import { ListModule } from './list/list.module';
 import { ListingModule } from './listing/listing.module';
 import { RatingModule } from './rating/rating.module';
 import { UserListModule } from './user-list/user-list.module';
+import { BcryptModule } from './bcrypt/bcrypt.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { UserListModule } from './user-list/user-list.module';
       useClass: TypeOrmConfigService,
       inject: [TypeOrmConfigService],
     }),
+    BcryptModule,
     UserModule,
     SessionModule,
     ListModule,
