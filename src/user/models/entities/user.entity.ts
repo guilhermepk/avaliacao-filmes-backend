@@ -7,6 +7,13 @@ import { Column, Entity, OneToMany } from "typeorm";
 
 @Entity({ name: `users`, schema: process.env.DB_SCHEMA })
 export class UserEntity extends EntityTemplate {
+    constructor(name: string, nickname: string, password: string) {
+        super();
+        this.name = name;
+        this.nickname = nickname;
+        this.password = password;
+    }
+
     @Column({ type: `varchar`, nullable: false })
     name: string;
 

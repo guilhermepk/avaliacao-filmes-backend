@@ -94,7 +94,5 @@ async function bootstrap() {
     : `produção`
     } rodando na porta ${port}`
   );
-  
-  console.log(await getMovies());
 }
 bootstrap();
