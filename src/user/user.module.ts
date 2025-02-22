@@ -19,6 +19,9 @@ import { BcryptModule } from "src/bcrypt/bcrypt.module";
         UserTypeOrmRepository,
         RegisterUserUseCase,
         FindUserByNicknameUseCase
+    ],
+    exports: [
+        FindUserByNicknameUseCase
     ]
 })
 export class UserModule {}

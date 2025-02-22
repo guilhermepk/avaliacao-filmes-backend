@@ -11,7 +11,6 @@ import { AppModule } from './app.module';
 import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { getMovies } from './tmdb-api/tmdb.config';
 
 dotenv.config();
 

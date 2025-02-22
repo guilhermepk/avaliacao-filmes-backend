@@ -9,6 +9,7 @@ import { ListingModule } from './listing/listing.module';
 import { RatingModule } from './rating/rating.module';
 import { UserListModule } from './user-list/user-list.module';
 import { BcryptModule } from './bcrypt/bcrypt.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { BcryptModule } from './bcrypt/bcrypt.module';
       inject: [TypeOrmConfigService],
     }),
     BcryptModule,
+    AuthModule,
     UserModule,
     SessionModule,
     ListModule,
