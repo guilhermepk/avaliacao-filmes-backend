@@ -10,6 +10,9 @@ import { ListTypeOrmRepository } from "./repositories/list.repository";
 import { UserModule } from "src/user/user.module";
 import { FindListsByUserController } from "./use-cases/find-by-user/find-list.by-user.controller";
 import { FindListsByUserUseCase } from "./use-cases/find-by-user/find-lists-by-user.use-case";
+import { AddContentToListController } from "./use-cases/add-content/add-content-to-list.controller";
+import { AddContentToListUseCase } from "./use-cases/add-content/add-content-to-list.use-case";
+import { FindListByIdUseCase } from "./use-cases/find-by-id/find-list-by-id.use-case";
 
 @Module({
     imports: [
@@ -21,12 +24,15 @@ import { FindListsByUserUseCase } from "./use-cases/find-by-user/find-lists-by-u
     ],
     controllers: [
         CreateListController,
-        FindListsByUserController
+        FindListsByUserController,
+        AddContentToListController,
     ],
     providers: [
         ListTypeOrmRepository,
         CreateListUseCase,
-        FindListsByUserUseCase
+        FindListsByUserUseCase,
+        AddContentToListUseCase,
+        FindListByIdUseCase
     ],
 })
 export class ListModule {}

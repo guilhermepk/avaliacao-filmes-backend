@@ -20,6 +20,15 @@ export class ListTypeOrmRepository {
         }
     }
 
+    async findById(id: number): Promise<ListEntity> {
+        const response = await this.repository.findOne({
+            where: { id },
+            relations: ['usersLists.user', 'listings']
+        });
+
+        return response;
+    }
+
     async findByUser(user: UserEntity): Promise<Array<{ usersListsCount: number, countMovie: number, countTV: number } & ListEntity>> {
         const schema = process.env.DB_SCHEMA
 

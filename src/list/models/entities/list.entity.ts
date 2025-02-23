@@ -1,7 +1,6 @@
 import { EntityTemplate } from "src/common/models/entities/entity-template";
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 import { ListVisibilitiesEnum } from "../enums/list-visibilities.enum";
-import { UserEntity } from "src/user/models/entities/user.entity";
 import { ListingEntity } from "src/listing/models/entities/listing.entity";
 import { UserListEntity } from "src/user-list/models/entities/user-list.entity";
 
@@ -21,7 +20,7 @@ export class ListEntity extends EntityTemplate {
 
     // --{ RELATIONS }--
 
-    @OneToMany(() => UserListEntity, userList => userList.user)
+    @OneToMany(() => UserListEntity, userList => userList.list)
     usersLists: UserListEntity[];
 
     @OneToMany(() => ListingEntity, listing => listing.list)
