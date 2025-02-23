@@ -8,6 +8,8 @@ import { CreateListUseCase } from "./use-cases/create/create-list.use-case";
 import { CreateListController } from "./use-cases/create/create-list.controller";
 import { ListTypeOrmRepository } from "./repositories/list.repository";
 import { UserModule } from "src/user/user.module";
+import { FindListsByUserController } from "./use-cases/find-by-user/find-list.by-user.controller";
+import { FindListsByUserUseCase } from "./use-cases/find-by-user/find-lists-by-user.use-case";
 
 @Module({
     imports: [
@@ -18,11 +20,13 @@ import { UserModule } from "src/user/user.module";
         UserModule
     ],
     controllers: [
-        CreateListController
+        CreateListController,
+        FindListsByUserController
     ],
     providers: [
         ListTypeOrmRepository,
-        CreateListUseCase
+        CreateListUseCase,
+        FindListsByUserUseCase
     ],
 })
 export class ListModule {}

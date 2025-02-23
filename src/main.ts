@@ -30,7 +30,7 @@ async function bootstrap() {
     cors({
       origin: function (origin, callback) {
         const whiteList = process.env.CORS_WHITELIST
-          ? process.env.CORS_WHITELIST.split(',')
+          ? process.env.CORS_WHITELIST.split(', ')
           : [];
         if (whiteList.includes(origin) || !origin) {
           if (process.env.PRODUCTION === 'false')
