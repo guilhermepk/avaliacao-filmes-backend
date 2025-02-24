@@ -52,3 +52,12 @@ export async function search(type: ContentTypesEnum, query: string, page?: numbe
 
     return await get(`search/${type}`, { params });
 }
+
+export async function discover(type: ContentTypesEnum, page?: number){
+    const params = {
+        page,
+        language: 'pt-BR'
+    };
+
+    return await get(`discover/${type}`, { params });
+}
